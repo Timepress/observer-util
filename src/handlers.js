@@ -7,9 +7,10 @@ import {
 } from './reactionRunner'
 
 const hasOwnProperty = Object.prototype.hasOwnProperty
+const ownProperties = Object.getOwnPropertyNames(Symbol)
 const wellKnownSymbols = new Set(
-  Object.getOwnPropertyNames(Symbol)
-    .map(key => Symbol[key])
+  ownProperties
+    .map(key => Symbol.for(key))
     .filter(value => typeof value === 'symbol')
 )
 
