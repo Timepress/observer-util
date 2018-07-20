@@ -10,7 +10,6 @@
     "types"
   ],
   "scripts": {
-    "test": "node ./scripts/test.js",
     "test-builds": "node ./scripts/testBuilds.js",
     "debug": "node ./scripts/debug.js",
     "lint": "standard",
