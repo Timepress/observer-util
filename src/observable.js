@@ -2,7 +2,7 @@ import { proxyToRaw, rawToProxy } from './internals'
 import { storeObservable } from './store'
 import * as builtIns from './builtIns'
 import baseHandlers from './handlers'
-const ProxyPolyfill = require('proxy-polyfill/src/proxy')
+const ProxyPolyfill = require('proxy-polyfill/proxy.min')
 
 export function observable (obj = {}) {
   // if it is already an observable or it should not be wrapped, return it
