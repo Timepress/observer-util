@@ -89,6 +89,7 @@
     "test"
   ],
   "dependencies": {
-    "@babel/runtime": "^7.0.0-beta.54"
+    "@babel/runtime": "^7.0.0-beta.54",
+    "proxy-polyfill": "^0.3.0"
   }
 }

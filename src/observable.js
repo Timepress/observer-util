@@ -2,6 +2,7 @@ import { proxyToRaw, rawToProxy } from './internals'
 import { storeObservable } from './store'
 import * as builtIns from './builtIns'
 import baseHandlers from './handlers'
+import ProxyPolyfill from 'proxy-polyfill/src/proxy'
 
 export function observable (obj = {}) {
   // if it is already an observable or it should not be wrapped, return it
@@ -16,7 +17,7 @@ export function observable (obj = {}) {
 function createObservable (obj) {
   // if it is a complex built-in object or a normal object, wrap it
   const handlers = builtIns.getHandlers(obj) || baseHandlers
-  const observable = new Proxy(obj, handlers)
+  const observable = new ProxyPolyfill(obj, handlers)
   // save these to switch between the raw object and the wrapped object with ease later
   rawToProxy.set(obj, observable)
   proxyToRaw.set(observable, obj)
