@@ -1,3 +1,45 @@
 {
-  "presets": ["es2016", "es2017", "stage-0"]
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "browsers": ["last 2 versions", "ie >= 11"]
+        },
+        "modules": false
+      }
+    ],
+    [
+      "@babel/preset-stage-0",
+      {
+        "decoratorsLegacy": true
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "helpers": false,
+        "polyfill": true,
+        "regenerator": true,
+        "moduleName": "@babel/runtime"
+      }
+    ],
+    ["@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ],
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose" : true
+      }
+    ]
+  ],
+  "env": {
+    "development": {
+    }
+  }
 }
