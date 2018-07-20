@@ -16,7 +16,7 @@
     "lint": "standard",
     "lint-fix": "prettier --ignore-path '.gitignore' --write '**/!(bundle).js' && standard --fix",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
-    "build": "node ./scripts/build.js",
+    "prepare": "node ./scripts/build.js",
     "build-toc": "node ./scripts/buildToc.js"
   },
   "author": {
